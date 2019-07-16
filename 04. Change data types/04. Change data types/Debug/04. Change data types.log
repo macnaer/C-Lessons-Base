@@ -1,0 +1,4 @@
+﻿  Source.cpp
+d:\lib\projects\c++\04. change data types\04. change data types\source.cpp(14): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+d:\lib\projects\c++\04. change data types\04. change data types\source.cpp(17): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  04. Change data types.vcxproj -> D:\Lib\Projects\c++\04. Change data types\Debug\04. Change data types.exe

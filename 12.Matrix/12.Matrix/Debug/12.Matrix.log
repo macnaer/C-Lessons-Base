@@ -1,0 +1,4 @@
+﻿  Source.cpp
+d:\lib\projects\c++\12.matrix\12.matrix\source.cpp(20): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+d:\lib\projects\c++\12.matrix\12.matrix\source.cpp(24): warning C4305: =: усечение из "double" в "float"
+  12.Matrix.vcxproj -> D:\Lib\Projects\c++\12.Matrix\Debug\12.Matrix.exe
