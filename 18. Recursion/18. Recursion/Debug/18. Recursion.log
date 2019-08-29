@@ -1,0 +1,5 @@
+﻿  Source.cpp
+d:\lib\projects\c++\18. recursion\18. recursion\source.cpp(61): warning C4715: Sum: значение возвращается не при всех путях выполнения
+d:\lib\projects\c++\18. recursion\18. recursion\source.cpp(85): warning C4715: Recurs: значение возвращается не при всех путях выполнения
+d:\lib\projects\c++\18. recursion\18. recursion\source.cpp(100): warning C4715: MaxElement: значение возвращается не при всех путях выполнения
+  18. Recursion.vcxproj -> D:\Lib\Projects\c++\18. Recursion\Debug\18. Recursion.exe
