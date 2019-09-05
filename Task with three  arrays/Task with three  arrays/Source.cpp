@@ -36,6 +36,19 @@ void FindMaches(int arrA[], int arrB[], const int SIZE, int *pCounter) {
 
 }
 
+void JoinArr(int arrA[], int arrB[], int newArr[], const int newSize) {
+
+	int iterator = 0;
+	for (int i = 0; i < newSize; i++) {
+		if (i < 5) {
+			newArr[i] = arrA[i];
+		}
+		else if (i >= 5 && i < 10) {
+			newArr[i] = arrB[iterator];
+			iterator++;
+		}
+	}
+}
 
 
 
@@ -63,15 +76,14 @@ int main() {
 	int newSize = (*pCounter) + (SIZE * 2);
 	newSize += SIZE * 2 - (*pCounter);
 	
-	cout << "newSie = " << newSize << endl;
+	cout << "newSize = " << newSize << endl;
+	 
+	//int newArr[] = { newSize };   //wrong
+	int *newArr = new int[newSize];
+	
 
-	int newArr[] = { newSize };
-
+	JoinArr(arrA, arrB, newArr, newSize);
 	PrintArr(newArr, newSize);
-
-
-	// Continue .....
-
 
 
 
