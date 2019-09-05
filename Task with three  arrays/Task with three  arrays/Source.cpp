@@ -36,9 +36,24 @@ void FindMaches(int arrA[], int arrB[], const int SIZE, int *pCounter) {
 
 }
 
-void JoinArr(int arrA[], int arrB[], int newArr[], const int newSize) {
+void NewMatchArr(int arrA[], int arrB[], int NewMatchArr[], int SIZE) {
 
 	int iterator = 0;
+	for (int i = 0; i < SIZE; i++) {
+		for (int j = 0; j < SIZE; j++) {
+			if (arrA[i] == arrB[j]) {
+				NewMatchArr[iterator] = arrA[i];
+				iterator++;
+			}
+		}
+	}
+}
+
+void JoinArr(int arrA[], int arrB[], int newArr[], int newArrMatch[],  const int SIZE, const int newSize, int *pCounter) {
+
+	int iterator = 0;
+	int iteratorFornewArrMatch = 0;
+	int flag = true;
 	for (int i = 0; i < newSize; i++) {
 		if (i < 5) {
 			newArr[i] = arrA[i];
@@ -47,7 +62,12 @@ void JoinArr(int arrA[], int arrB[], int newArr[], const int newSize) {
 			newArr[i] = arrB[iterator];
 			iterator++;
 		}
+		else if(i > 9 && i < 10 + (*pCounter)) {
+			newArr[i] = newArrMatch[iteratorFornewArrMatch];
+			iteratorFornewArrMatch++;
+		}
 	}
+
 }
 
 
@@ -69,20 +89,31 @@ int main() {
 	PrintArr(arrA, SIZE);
 	PrintArr(arrB, SIZE);
 
+
 	FindMaches(arrA, arrB, SIZE, pCounter);
 
-	cout << "pCounter = " << *pCounter << endl;
+	int newArrMatchSize = *pCounter;
+	//cout << "newArrMatchSize = " << newArrMatchSize << endl;
+		 
+	int * newArrMatch = new int[newArrMatchSize];
+	NewMatchArr(arrA, arrB, newArrMatch, SIZE);
+	cout << "Print arr for NewMatchArr=========================> " << endl;
+	//PrintArr(newArrMatch, newArrMatchSize);
+	//cout << "pCounter = " << *pCounter << endl;
+
+	cout << "Print arr for NewMatchArr=========================> " << endl;
+
+
 
 	int newSize = (*pCounter) + (SIZE * 2);
 	newSize += SIZE * 2 - (*pCounter);
 	
-	cout << "newSize = " << newSize << endl;
+	//cout << "newSize = " << newSize << endl;
 	 
 	//int newArr[] = { newSize };   //wrong
 	int *newArr = new int[newSize];
-	
 
-	JoinArr(arrA, arrB, newArr, newSize);
+	JoinArr(arrA, arrB, newArr, newArrMatch, SIZE, newSize, pCounter);
 	PrintArr(newArr, newSize);
 
 
