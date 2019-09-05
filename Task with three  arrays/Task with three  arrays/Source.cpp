@@ -103,8 +103,6 @@ int main() {
 
 	cout << "Print arr for NewMatchArr=========================> " << endl;
 
-
-
 	int newSize = (*pCounter) + (SIZE * 2);
 	newSize += SIZE * 2 - (*pCounter);
 	
