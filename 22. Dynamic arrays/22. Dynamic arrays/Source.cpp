@@ -16,6 +16,22 @@ void PrintArr(int arr[], const int SIZE) {
 	cout << endl;
 }
 
+void AddNewItem(int *&arr, int &size) {
+
+	int newElem = 100;
+	int *tmp = new int[size + 1];
+
+	for (int i = 0; i < size; i++) {
+		tmp[i] = arr[i];
+	}
+
+	tmp[size] = newElem;
+
+	delete[] arr;
+
+	arr = tmp;
+	size++;
+}
 
 int main() {
 	srand(unsigned(time(NULL)));
@@ -27,6 +43,8 @@ int main() {
 	int *arr = new int[size];
 
 	FillArr(arr, size);
+	PrintArr(arr, size);
+	AddNewItem(arr, size);
 	PrintArr(arr, size);
 
 
