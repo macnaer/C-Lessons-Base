@@ -10,10 +10,10 @@ int main() {
 	cout << "Enter matrix size: [row first] => " << endl;
 	cin >> row >> col;
 
-	int **arr = new int *[row];
+	int **arr = new int *[row]; // ¬каз≥вник на вказ≥вники
 
 	for (int i = 0; i < row; i++) {		
-		arr[i] = new int[col];
+		arr[i] = new int[col];   // ¬каз≥вник на новий р€док
 	}
 
 
@@ -32,14 +32,11 @@ int main() {
 
 
 	for (int i = 0; i < row; i++) {
-		delete[] arr[i];
+		delete[] arr[i];   
 	}
 
 	delete[] arr;
-
-
-
-
+	arr = nullptr;
 
 	system("pause");
 	return 0;
