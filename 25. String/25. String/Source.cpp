@@ -4,6 +4,12 @@
 
 using namespace std;
 
+string Fill(string name) {
+	
+	string res = "Hello, " + name;
+	return res;
+}
+
 int main() {
 
 	/*char name[5] = {"Bill"};
@@ -34,6 +40,9 @@ int main() {
 	{
 		cout << strArr[i] << endl;
 	}
+
+	cout << Fill("Bob") << endl;
+
 
 	system("pause");
 	return 0;
