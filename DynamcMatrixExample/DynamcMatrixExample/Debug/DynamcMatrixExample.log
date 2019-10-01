@@ -1,2 +1,4 @@
 ﻿  Source.cpp
+d:\lib\projects\c++\dynamcmatrixexample\dynamcmatrixexample\source.cpp(65): warning C4018: <: несоответствие типов со знаком и без знака
+d:\lib\projects\c++\dynamcmatrixexample\dynamcmatrixexample\source.cpp(75): warning C4018: <: несоответствие типов со знаком и без знака
   DynamcMatrixExample.vcxproj -> D:\Lib\Projects\c++\DynamcMatrixExample\Debug\DynamcMatrixExample.exe
