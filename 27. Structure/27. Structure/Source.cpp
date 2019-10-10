@@ -3,39 +3,77 @@
 
 using namespace std;
 
-struct Library {
+struct Player {
 	string name;
-	string address;
-	string director;
-	int bookCount;
-
-	void ShowLibraryInfo() {
-		cout << "Name: " << name << "\nAddress: " << address << "\nDirector: " << director << "\nBook Count: " << bookCount << endl;
+	string surname;
+	int price;
+	void ShowPlayer() {
+		cout << "Name: " << name << "\nSurname: " << surname << "\nPrice: " << price << "\nPosition: " << position << endl;
 	}
-
+	string position;
 };
 
-/*typedef struct {
+struct Team {
 	string name;
-} Library;*/
+	string country;
+	string city;
+	int wins;
+	int draw;
+	int lose;
+	int size;
 
-void CreateLibrary(Library *lib) {
-	cout << "Enter library name =>" << endl;
-	cin >> lib->name;
-	cout << "Enter library address =>" << endl;
-	cin >> lib->address;
-	cout << "Diretor name => " << endl;
-	cin >> lib->director;
-	cout << "Enter book count => " << endl;
-	cin >> lib->bookCount;
-	cout << "\nLibrary created." << endl;
+	void SetTeamSize(int newSize) {
+		size = newSize;
+	}
+	void ShowTeam() {
+		cout << "Name: " << name << "\nCountry: " << country << "\nCity: " << city << "\nWins: " << wins << "\nDraw: " << draw << "\nLose" << "\nTeam size: " << size << endl;
+	}
+	void GetMem() {
+		player = new Player[size];
+	}
+
+	Player *player = nullptr;  //new Player[size];
+};
+
+
+void FillPlayer(Player *player, int size) {
+	for (int i = 0; i < size; i++) {
+		cout << "Enter player name: " << endl;
+		cin >> player[i].name;
+		cout << "Enter player surname: " << endl;
+		cin >> player[i].surname;
+		cout << "Enter player position: " << endl;
+		cin >> player[i].position;
+		cout << "Enter player price: " << endl;
+		cin >> player[i].price;
+	}
 }
+
+void ShowPlayer(Player *player, int size) {
+	cout << "===================================>>>>>>>>>>>>>>>>>>>>>" << endl;
+	for (int i = 0; i < size; i++) {
+		player[i].ShowPlayer();
+	}
+	cout << "===================================>>>>>>>>>>>>>>>>>>>>>" << endl;
+}
+
+
 
 int main() {
 
-	Library lib;
-	CreateLibrary(&lib);
-	lib.ShowLibraryInfo();
+	Team Karpaty;
+	Karpaty.name = "Karpaty";
+	Karpaty.city = "Lviv";
+	Karpaty.country = "Ukraine";
+	Karpaty.wins = 23;
+	Karpaty.draw = 3;
+	Karpaty.lose = 3;
+	Karpaty.size = 3;
+	Karpaty.GetMem();
+	Karpaty.ShowTeam();
+
+	FillPlayer(Karpaty.player, Karpaty.size);
+	ShowPlayer(Karpaty.player, Karpaty.size);
 
 	system("pause");
 	return 0;
