@@ -3,38 +3,24 @@
 
 using namespace std;
 
-struct Book {
+struct Book
+{
 	string title;
 	string author;
-	int price;
 	int pages;
+	int price;
+
+	struct { int day; string month; int year; } Date;
 
 	void ShowBookInfo() {
-		cout << "<=======================================>" << endl;
-		cout << "\nTitle: " << title << "\nAuthor: " << author << "\nPages: " << pages << "\nBook price: " <<price << endl;
-		cout << "<=======================================>" << endl;
+		cout << "<!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>" << endl;
+		cout << "\nTitle: " << title << "\nAuthor: " << author << "\nPages: " << pages << "\nPrice: " << price << endl;
+		cout << "Published day: => " << Date.day << " Month: => " << Date.month << " Year: => " << Date.year << endl;
+		cout << "<!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>" << endl;
 	}
+
+
 };
-
-void ShowBooksInfo(Book *books, int bookCount) {
-	for (int i = 0; i < bookCount; i++) {
-		books[i].ShowBookInfo();
-	}
-}
-
-void CreateBookCollection(Book *books, int bookCount) {
-	for (int i = 0; i < bookCount; i++) {
-		cout << "Book number :" << i + 1 << endl;
-		cout << "Enter book name :" << endl;
-		cin >> books[i].title;
-		cout << "Enter author :" << endl;
-		cin >> books[i].author;
-		cout << "Enter price :" << endl;
-		cin >> books[i].price;
-		cout << "Pages count :" << endl;
-		cin >> books[i].pages;
-	}
-}
 
 void SortByPrice(Book *books, int bookCount) {
 	for (int i = 0; i < bookCount; i++) {
@@ -46,15 +32,47 @@ void SortByPrice(Book *books, int bookCount) {
 	}
 }
 
+void CreateBookCollection(Book *books, const int booksCount) {
+
+	for (int i = 0; i < booksCount; i++) {
+		cout << "Create book number: => " << i + 1 << endl;
+		cout << "Book title: =>" << endl;
+		cin >> books[i].title;
+		cout << "Book author: =>" << endl;
+		cin >> books[i].author;
+		cout << "Pages: =>" << endl;
+		cin >> books[i].pages;
+		cout << "Book price: =>" << endl;
+		cin >> books[i].price;
+		cout << "Published date => " << endl;
+		cin >> books[i].Date.day;
+		cin >> books[i].Date.month;
+		cin >> books[i].Date.year;
+		cout << "<===================================>" << endl;
+		cout << "<=============Book added! ==========>" << endl;
+		cout << "<===================================>" << endl;
+	}
+}
+
+void ShowBook(Book *books, const int booksCount) {
+	for (int i = 0; i < booksCount; i++) {
+		books[i].ShowBookInfo();
+	}
+}
+
 int main() {
 
-	int bookCount = 0;
-	cout << "Enter book count: =>" << endl;
-	cin >> bookCount;
-	Book *books = new Book[bookCount];
+	int booksCount = 0;
+	cout << "Enter books count: " << endl;
+	cin >> booksCount;
 
-	CreateBookCollection(books, bookCount);
-	ShowBooksInfo(books, bookCount);
+	Book *books = new Book[booksCount];
+	CreateBookCollection(books, booksCount);
+	ShowBook(books, booksCount);
+	SortByPrice(books, booksCount);
+	cout << "---()---O_o<<< " << endl;
+	ShowBook(books, booksCount);
+
 
 	system("pause");
 	return 0;
