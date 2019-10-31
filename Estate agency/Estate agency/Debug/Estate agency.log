@@ -1,0 +1,7 @@
+﻿  Source.cpp
+d:\lib\projects\c++\estate agency\estate agency\source.cpp(402): warning C4101: price: неиспользованная локальная переменная
+d:\lib\projects\c++\estate agency\estate agency\source.cpp(396): warning C4101: flatNumber: неиспользованная локальная переменная
+d:\lib\projects\c++\estate agency\estate agency\source.cpp(395): warning C4101: houseNumber: неиспользованная локальная переменная
+d:\lib\projects\c++\estate agency\estate agency\source.cpp(397): warning C4101: roomsAmount: неиспользованная локальная переменная
+d:\lib\projects\c++\estate agency\estate agency\source.cpp(398): warning C4101: area: неиспользованная локальная переменная
+  Estate agency.vcxproj -> D:\Lib\Projects\c++\Estate agency\Debug\Estate agency.exe
